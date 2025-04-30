@@ -2,7 +2,7 @@ class Card:
 	def __init__(self, suit, rank):
 		self.suit = suit
 		self.rank = rank
-		self.name = f'{rank} of {suit}s'
+		self.name = f'{rank} of {suit}'
 
 	def get_card_val(self):
 		if self.rank == 'Ace':
