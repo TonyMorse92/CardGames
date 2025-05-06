@@ -20,10 +20,10 @@ class Player:
 			del Deck[0]
 			cards_drawn += 1
 
-	def get_hand(self, is_dealer=False):
+	def get_hand(self, hide_hand=False):
 		hand = [card.name for card in self.hand]
 		# Dealer doesn't show one card
-		if is_dealer:
+		if hide_hand:
 			return hand[1:]
 		else:
 			return hand	

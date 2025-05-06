@@ -22,7 +22,7 @@ dealer.draw(deck,2)
 dealer.update_score()
 me.update_score()
 print(f'Hand: {me.get_hand()}')
-print(f'Dealer hand: {dealer.get_hand(is_dealer=True)}\n')
+print(f'Dealer hand: {dealer.get_hand(hide_hand=True)}\n')
 
 
 # Need to check if Player has a 21. If they do, they win
@@ -44,7 +44,7 @@ while action == 'H':
 			print("YOU LOSE!!!")
 			sys.exit()
 		print(f'Hand: {me.get_hand()}')
-		print(f'Dealer hand: {dealer.get_hand(is_dealer=True)}')
+		print(f'Dealer hand: {dealer.get_hand(hide_hand=True)}')
 
 		# Then needs to ask again
 		# If the player busts, no need to do anything with the dealer, player loses
@@ -58,7 +58,7 @@ while action == 'H':
 				print(f'PLACEHOLDER PUT IN MORE LOGIC.')
 		
 		else:
-			print(f'Dealer hand: {dealer.get_hand(is_dealer=True)}')
+			print(f'Dealer hand: {dealer.get_hand(hide_hand=True)}')
 			print(f'YOU LOSE!!!')
 
 		# This will be the Dealer's logic to see if they stay or hit
