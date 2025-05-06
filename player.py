@@ -33,12 +33,3 @@ class Player:
 
 	def update_score(self):
 		self.score = sum([card.get_card_val() for card in self.hand]) 
-
-# Dealer shows all but the first card
-# It would probably make sense for Dealer to be a subclass of player
-# with special methods for hiding cards.
-# Or maybe a sepearte class, since it will be a computer with its own play logic
-	def get_dealer_hand(self):
-		hand = [card.name for card in self.hand]
-		hand.pop(0)
-		return hand
