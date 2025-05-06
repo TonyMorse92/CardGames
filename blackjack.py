@@ -7,7 +7,7 @@ suits = ['Hearts', 'Spades', 'Clubs', 'Diamonds']
 ranks = [str(i) for i in range (2,11)]
 ranks += ['Jack','Queen','King','Ace']
 
-
+## TODO: Deck should probably be its own class if I'm doing it like this.
 deck = [Card(suit,face) for suit in suits for face in ranks]
 
 print(f'First card: {deck[0].name}')
