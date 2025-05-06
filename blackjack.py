@@ -21,29 +21,30 @@ me.draw(deck, 2)
 dealer.draw(deck,2)
 dealer.update_score()
 me.update_score()
-print(f'First hand: {me.get_hand()}')
-print(f'First score: {me.get_score()}\n')
-print(f'Dealer hand: {dealer.get_dealer_hand()}')
+print(f'Hand: {me.get_hand()}')
+print(f'Dealer hand: {dealer.get_hand(is_dealer=True)}\n')
 
 
 # Need to check if Player has a 21. If they do, they win
 action = 'H'
 	
 while action == 'H':
-	action = input("Do you want to [H]it or [S]tay?")
+	action = input("Do you want to [H]it or [S]tay?\n")
 
 	if action == 'H':
 		me.draw(deck,1)
 		# TODO: Maybe it makes more sense for get_score to update the score automatically?
 		me.update_score() 
 		if me.get_score() == 21:
+			print(f'Hand: {me.get_hand()}')
 			print("YOU WIN!!!")
 			sys.exit()
 		elif me.get_score() > 21:
+			print(f'Hand: {me.get_hand()}')
 			print("YOU LOSE!!!")
 			sys.exit()
 		print(f'Hand: {me.get_hand()}')
-		print(f'Dealer hand: {dealer.get_dealer_hand()}')
+		print(f'Dealer hand: {dealer.get_hand(is_dealer=True)}')
 
 		# Then needs to ask again
 		# If the player busts, no need to do anything with the dealer, player loses
@@ -57,7 +58,7 @@ while action == 'H':
 				print(f'PLACEHOLDER PUT IN MORE LOGIC.')
 		
 		else:
-			print(f'Dealer hand: {dealer.get_dealer_hand()}')
+			print(f'Dealer hand: {dealer.get_hand(is_dealer=True)}')
 			print(f'YOU LOSE!!!')
 
 		# This will be the Dealer's logic to see if they stay or hit
