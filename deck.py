@@ -1,20 +1,14 @@
 from card import Card
 
 class Deck:
-	def __init__(self):
-		self.suit = suit
-
 	def make_deck(self):
-		if self.rank == 'Ace':
-			return 11
-		elif self.rank == 'King':
-			return 10
-		elif self.rank == 'Queen':
-			return 10
-		elif self.rank == 'Jack':
-			return 10
-		else:
-			return int(self.rank)
+		suits = ['Hearts', 'Spades', 'Clubs', 'Diamonds']
+		ranks = [str(i) for i in range (2,11)]
+		ranks += ['Jack','Queen','King','Ace']
+		return [Card(suit, rank) for suit, rank in zip(suits, ranks)]
 
 
-print("hi")
+deck = Deck().make_deck()
+
+for card in deck:
+	print(card.name)
