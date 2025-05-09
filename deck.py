@@ -1,5 +1,4 @@
 from card import Card
-import itertools
 
 class Deck:
 	def make_deck(self):
@@ -8,8 +7,3 @@ class Deck:
 		ranks += ['Jack','Queen','King','Ace']
 		return [Card(suit, rank) for suit in suits for rank in ranks]
 
-
-deck = Deck().make_deck()
-
-for card in deck:
-	print(card.name)
