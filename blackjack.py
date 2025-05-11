@@ -32,6 +32,7 @@ while action == 'H':
 	player.draw(deck,1)
 	player.update_score() 
 	print(f'\nHand: {player.get_hand()}')
+	print(f'Dealer hand: {dealer.get_hand(hide_hand=True)}')
 
 	if player.get_score() > 21:
 		print('Bust. You lose!')
