@@ -1,5 +1,6 @@
 import random
 import sys
+import time
 from card import Card
 from player import Player
 from deck import Deck
@@ -53,6 +54,10 @@ while dealer.get_score() <= player.get_score():
 	print(f'Dealer hand: {dealer.get_hand(hide_hand=False)}\n')	
 	dealer.draw(deck,1)
 	dealer.update_score()
+
+	# Give the player some time to process what happened.	
+	time.sleep(5)
+
 	if dealer.get_score() > 21:
 		print(f'\nHand: {player.get_hand()}')
 		print(f'Dealer hand: {dealer.get_hand(hide_hand=False)}\n')
