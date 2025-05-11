@@ -55,8 +55,9 @@ while dealer.get_score() <= player.get_score():
 	dealer.draw(deck,1)
 	dealer.update_score()
 
-	# Give the player some time to process what happened.	
-	time.sleep(5)
+	# Give the player some time to process what happened.
+	# Parameter is number of seconds to wait.
+	time.sleep(1.5)
 
 	if dealer.get_score() > 21:
 		print(f'\nHand: {player.get_hand()}')
