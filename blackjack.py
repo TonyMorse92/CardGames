@@ -2,13 +2,16 @@ import random
 import sys
 from card import Card
 from player import Player
+from deck import Deck
 
 suits = ['Hearts', 'Spades', 'Clubs', 'Diamonds']
 ranks = [str(i) for i in range (2,11)]
 ranks += ['Jack','Queen','King','Ace']
 
 ## TODO: Deck should probably be its own class if I'm doing it like this.
-deck = [Card(suit,face) for suit in suits for face in ranks]
+#deck = [Card(suit,face) for suit in suits for face in ranks]
+deck = Deck().make_deck()
+
 
 # Shuffle 3 tiplayers. No cheating here
 random.shuffle(deck)
