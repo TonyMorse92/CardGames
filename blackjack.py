@@ -21,8 +21,8 @@ player.update_score()
 def quit():
 	sys.exit()
 
-print(f'Dealer hand: {dealer.get_hand(hide_hand=True)}')
 print(f'Hand: {player.get_hand()}')
+print(f'Dealer hand: {dealer.get_hand(hide_hand=True)}')
 
 
 # Begin Game Loop
