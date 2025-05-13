@@ -5,26 +5,37 @@ from card import Card
 from player import Player
 from deck import Deck
 
-deck = Deck().make_deck()
-random.shuffle(deck)
-
-
-computer = Player()
-player = Player()
-
-player.draw(deck, 2)
-computer.draw(deck,2)
-
-computer.update_score()
-player.update_score()
-
 #TODO: Eventually make this check if they want to play again.
 def quit():
 	sys.exit()
 
+deck = Deck().make_deck()
+random.shuffle(deck)
+
+player = Player()
+computer = Player()
+
+player_deck = deck[:len(deck)//2]
+player_side = [] 
+computer_deck = deck[len(deck)//2:]
+computer_side = []
+
+player.draw(deck, 1)
+computer.draw(deck,1)
+
+player.update_score()
+computer.update_score()
+
 print(f'Hand: {player.get_hand()}')
 print(f'Computer hand: {computer.get_hand(hide_hand=True)}')
 
+if player.get_score() == computer.get_score():
+	# This will be declaring war.
+	pass
+	quit() # for initial outline phase
+
+elif player.get_score() < computer.get_score():
+	computer.append(
 
 # Begin Game Loop
 action = input("\nDo you want to [H]it or [S]tay?\n")

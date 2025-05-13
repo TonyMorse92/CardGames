@@ -3,21 +3,11 @@ class Player:
 		self.score = 0
 		self.hand = []
 
-	def initial_draw(self,Deck):
-		print(f'First card in player class deck: {Deck[0].name}')
-		print(f'hand before append:  {self.hand}')
-		self.hand.append(Deck[0])
-		self.hand.append(Deck[1])
-		print(f'hand after append: {self.hand}')
-		print(f'Player hand: {self.hand[0].name}  and  {self.hand[1].name}')
-		del Deck[0]
-		del Deck[1]
-
-	def draw(self, Deck, num_cards_to_draw):
+	def draw(self, deck, num_cards):
 		cards_drawn = 0
-		while(cards_drawn < num_cards_to_draw):
-			self.hand.append(Deck[0])
-			del Deck[0]
+		while(cards_drawn < num_cards):
+			self.hand.append(deck[0])
+			del deck[0]
 			cards_drawn += 1
 
 	def get_hand(self, hide_hand=False):
