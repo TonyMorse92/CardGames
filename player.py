@@ -18,8 +18,10 @@ class Player:
 		else:
 			return hand	
 
+	#TODO: There's no reason for a getter here, just use score. 
 	def get_score(self):
 		return self.score
 
+	#TODO: This is very Blackjack specific. Scoring should maybe be in the specific game? 
 	def update_score(self):
 		self.score = sum([card.get_card_val() for card in self.hand]) 
