@@ -3,4 +3,7 @@
 import blackjack
 
 
-input("Do you want to play blackjack?")
+action = input("Do you want to play blackjack?\n")
+
+if action == "Y":
+	blackjack.play()
