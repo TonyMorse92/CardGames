@@ -8,4 +8,6 @@ action = input("Do you want to play blackjack?\n")
 if action == "Y":
 	blackjack.play()
 
-print("Hi")
+print("\n\nHi")
+
+exit
