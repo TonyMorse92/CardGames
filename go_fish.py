@@ -22,10 +22,6 @@ def play():
 	dealer.update_score()
 	player.update_score()
 
-	#TODO: Eventually make this check if they want to play again.
-	def quit():
-		sys.exit()
-
 	print(f'Hand: {player.get_hand()}')
 	print(f'Dealer hand: {dealer.get_hand(hide_hand=True)}')
 
@@ -41,10 +37,10 @@ def play():
 
 		if player.get_score() > 21:
 			print('Bust. You lose!')
-			quit()
+			return
 		elif player.get_score() == 21:
 			print("21. You win!")
-			quit()
+			return
 		else:
 			action = input("\nDo you want to [H]it or [S]tay?\n")
 
@@ -67,11 +63,11 @@ def play():
 			print(f'\nHand: {player.get_hand()}')
 			print(f'Dealer hand: {dealer.get_hand(hide_hand=False)}\n')
 			print(f'Dealer bust. You win!')	
-			quit()
+			return
 
 
 	# Only way we haven't exited yet is if dealer has higher hand and didn't bust
 	print(f'\nHand: {player.get_hand()}')
 	print(f'Dealer hand: {dealer.get_hand(hide_hand=False)}\n')
 	print(f'Dealer higher. You lose!')	
-	quit()
+	return
