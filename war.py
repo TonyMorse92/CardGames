@@ -80,5 +80,5 @@ def play():
 	# Only way we haven't exited yet is if computer has higher hand and didn't bust
 	print(f'\nHand: {player.get_hand()}')
 	print(f'Computer hand: {computer.get_hand(hide_hand=False)}\n')
-	print(f'Computer higher. You lose!')	
+	print(f'Computer higher. You lose, ha!')	
 	return
