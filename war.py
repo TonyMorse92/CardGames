@@ -32,10 +32,8 @@ def play():
 	if player.get_score() == computer.get_score():
 		# This will be declaring war.
 		pass
-		return # for initial outline phase
 
 	elif player.get_score() < computer.get_score():
-		computer.append(
 
 	# Begin Game Loop
 	action = input("\nDo you want to [H]it or [S]tay?\n")
